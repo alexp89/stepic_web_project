@@ -6,6 +6,12 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class QuestionManager(models.Manager):                                          
+        def new():                                                              
+                pass                                                            
+        def popular():                                                          
+                pass
+
 class Question(models.Model):
     objects = QuestionManager()
     title = models.CharField(default="", max_length=1024)
@@ -31,8 +37,4 @@ class Answer(models.Model):
     def __str__(self):
         return self.text
 
-class QuestionManager(models.Manager):                                          
-        def new():                                                              
-                pass                                                            
-        def popular():                                                          
-                pass
+
